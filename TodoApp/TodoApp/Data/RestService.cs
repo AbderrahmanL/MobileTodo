@@ -29,8 +29,8 @@ namespace TodoApp
 		{
 			Items = new List<TodoItem> ();
 
-			// RestUrl = http://developer.xamarin.com:8081/api/todoitems
-			var uri = new Uri (string.Format (Constants.RestUrl, string.Empty));
+            // RestUrl = http://todoapi20171209102122.azurewebsites.net
+            var uri = new Uri (string.Format (Constants.RestUrl, string.Empty));
 
 			try {
 				var response = await client.GetAsync (uri);
@@ -47,8 +47,8 @@ namespace TodoApp
 
 		public async Task SaveTodoItemAsync (TodoItem item, bool isNewItem = false)
 		{
-			// RestUrl = http://developer.xamarin.com:8081/api/todoitems
-			var uri = new Uri (string.Format (Constants.RestUrl, string.Empty));
+            // RestUrl = http://todoapi20171209102122.azurewebsites.net
+            var uri = new Uri (string.Format (Constants.RestUrl, string.Empty));
 
 			try {
 				var json = JsonConvert.SerializeObject (item);
@@ -72,8 +72,8 @@ namespace TodoApp
 
 		public async Task DeleteTodoItemAsync (string id)
 		{
-			// RestUrl = http://developer.xamarin.com:8081/api/todoitems/{0}
-			var uri = new Uri (string.Format (Constants.RestUrl, id));
+            // RestUrl = http://todoapi20171209102122.azurewebsites.net/{0}
+            var uri = new Uri (string.Format (Constants.RestUrl, id));
 
 			try {
 				var response = await client.DeleteAsync (uri);
