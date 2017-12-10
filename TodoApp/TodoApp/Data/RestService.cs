@@ -73,10 +73,10 @@ namespace TodoApp
 		public async Task DeleteTodoItemAsync (string id)
 		{
             // RestUrl = http://todoapi20171209102122.azurewebsites.net/{0}
-            var uri = new Uri (string.Format (Constants.RestUrl, id));
+            var uri = new Uri (string.Format (Constants.RestUrl+"/"+id));
 
 			try {
-				var response = await client.DeleteAsync (uri);
+                var response = await client.DeleteAsync (uri);
 
 				if (response.IsSuccessStatusCode) {
 					Debug.WriteLine (@"				TodoItem successfully deleted.");	
